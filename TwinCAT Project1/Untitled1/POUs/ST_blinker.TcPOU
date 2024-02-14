@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="ST_blinker" Id="{37e71a61-3e5c-44ed-a5e7-5d62c766e7fe}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK ST_blinker
+VAR_INPUT
+	execute:BOOL;
+END_VAR
+VAR_OUTPUT
+	output:BOOL;
+END_VAR
+VAR
+	delay: TON;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[delay(IN := NOT delay.Q, PT := T#0.5S);
+output := (NOT output AND delay.Q) OR (output AND NOT delay.Q) AND execute;
+]]></ST>
+    </Implementation>
+    <LineIds Name="ST_blinker">
+      <LineId Id="9" Count="0" />
+      <LineId Id="18" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

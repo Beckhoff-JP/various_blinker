@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{10696c74-9f22-423d-8213-16eb2c4decf7}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	button1:BOOL;
+	button2:BOOL;
+	button3:BOOL;
+	button4:BOOL;
+	light1:BOOL;
+	light2:BOOL;
+	light3:BOOL;
+	light4:BOOL;
+	blinker1 :FBD_blinker;
+	blinker2 :LD_blinker;
+	blinker3 :ST_blinker;
+	blinker4 :CFC_blinker;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[blinker1(execute := button1,output => light1);
+blinker2(execute := button2,output => light2);
+blinker3(execute := button3,output => light3);
+blinker4(execute := button4,output => light4);
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="12" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

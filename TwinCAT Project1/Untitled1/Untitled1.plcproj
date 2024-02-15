@@ -33,6 +33,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\TIMEMUL.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\ST_blinker.TcPOU">
       <SubType>Code</SubType>
     </Compile>

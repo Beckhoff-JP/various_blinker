@@ -4,6 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK LD_blinker
 VAR_INPUT
 	execute:BOOL;
+	period: TIME := T#1S;
 END_VAR
 VAR_OUTPUT
 	output:BOOL;
@@ -58,8 +59,8 @@ END_VAR]]></Declaration>
                         <v n="Extensible">false</v>
                       </o>
                       <n n="InputFlags" />
-                      <l2 n="InputItems" cet="BoxTreeOperand">
-                        <o>
+                      <l2 n="InputItems">
+                        <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
                             <v n="Operand">"delay.Q"</v>
                             <v n="Type">"BOOL"</v>
@@ -78,10 +79,11 @@ END_VAR]]></Declaration>
                           </o>
                           <v n="Id">18L</v>
                         </o>
-                        <o>
-                          <o n="Operand" t="Operand">
-                            <v n="Operand">"T#0.5S"</v>
-                            <v n="Type">"TIME"</v>
+                        <o t="BoxTreeBox">
+                          <v n="BoxType">"DIV"</v>
+                          <o n="Instance" t="Operand">
+                            <n n="Operand" />
+                            <v n="Type">""</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -92,10 +94,79 @@ END_VAR]]></Declaration>
                             </o>
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
-                            <v n="IsInstance">false</v>
-                            <v n="Id">23L</v>
+                            <v n="IsInstance">true</v>
+                            <v n="Id">136L</v>
                           </o>
-                          <v n="Id">22L</v>
+                          <o n="OutputItems" t="OutputItemList">
+                            <l2 n="OutputItems">
+                              <n />
+                            </l2>
+                          </o>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">true</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <n n="InputFlags" />
+                          <l2 n="InputItems" cet="BoxTreeOperand">
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"period"</v>
+                                <v n="Type">"TIME"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">23L</v>
+                              </o>
+                              <v n="Id">22L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"2"</v>
+                                <v n="Type">"INT"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">135L</v>
+                              </o>
+                              <v n="Id">134L</v>
+                            </o>
+                          </l2>
+                          <o n="InputParam" t="ParamList">
+                            <l2 n="Names" />
+                            <l2 n="Types" />
+                          </o>
+                          <o n="OutputParam" t="ParamList">
+                            <l2 n="Names" cet="String">
+                              <v></v>
+                            </l2>
+                            <l2 n="Types" cet="String">
+                              <v>INT</v>
+                            </l2>
+                          </o>
+                          <v n="CallType" t="Operator">Div</v>
+                          <v n="EN">false</v>
+                          <v n="ENO">false</v>
+                          <n n="STSnippet" />
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
+                          <v n="Id">137L</v>
                         </o>
                       </l2>
                       <o n="InputParam" t="ParamList">
@@ -416,7 +487,7 @@ END_VAR]]></Declaration>
                   <v n="Id">29L</v>
                 </o>
               </l2>
-              <v n="BranchCounter">19</v>
+              <v n="BranchCounter">0</v>
               <v n="ValidIds">true</v>
             </o>
           </Data>

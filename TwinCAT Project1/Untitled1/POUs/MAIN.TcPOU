@@ -18,14 +18,14 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[blinker1(execute := button1,period := T#1S,duty := 0.2,output => light1);
-blinker2(execute := button2,period := T#2S,duty := 0.2,output => light2);
+      <ST><![CDATA[blinker1(execute := button1,period := T#4S,duty := 0.2,output => light1);
+blinker2(execute := button2,period := T#3S,duty := 0.2,output => light2);
 blinker3(execute := button3,period := T#3S,duty := 0.2,output => light3);
 blinker4(execute := button4,period := T#4S,duty := 0.2,output => light4);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="40" Count="3" />
+      <LineId Id="59" Count="3" />
       <LineId Id="12" Count="0" />
     </LineIds>
   </POU>

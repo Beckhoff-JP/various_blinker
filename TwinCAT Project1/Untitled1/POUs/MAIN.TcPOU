@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4026.17">
   <POU Name="MAIN" Id="{10696c74-9f22-423d-8213-16eb2c4decf7}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
@@ -12,7 +12,7 @@ VAR
 	light3:BOOL;
 	light4:BOOL;
 	blinker1 :FBD_blinker;
-	blinker2 :LD_blinker;
+	blinker2 :LD2_blinker;
 	blinker3 :ST_blinker;
 	blinker4 :CFC_blinker;
 END_VAR
@@ -24,9 +24,5 @@ blinker3(execute := button3,period := T#3S,duty := 0.2,output => light3); // コ
 blinker4(execute := button4,period := T#3S,duty := 0.2,output => light4); // コメント追加
 ]]></ST>
     </Implementation>
-    <LineIds Name="MAIN">
-      <LineId Id="59" Count="3" />
-      <LineId Id="12" Count="0" />
-    </LineIds>
   </POU>
 </TcPlcObject>

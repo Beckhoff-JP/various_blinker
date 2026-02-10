@@ -9,7 +9,7 @@
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
     <Name>Untitled1</Name>
-    <ProgramVersion>3.1.4024.0</ProgramVersion>
+    <ProgramVersion>3.1.4026.20</ProgramVersion>
     <Application>{a76d9cce-c5bd-4232-9323-8b618c9c87bf}</Application>
     <TypeSystem>{9d3c6fda-4b63-4a36-a616-7c0f004c9ded}</TypeSystem>
     <Implicit_Task_Info>{c997ab03-6011-4a60-b9f0-c495dc888481}</Implicit_Task_Info>
@@ -25,6 +25,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\FBD_blinker.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\LD2_Blinker.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\LD_blinker.TcPOU">

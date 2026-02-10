@@ -23,7 +23,14 @@ END_VAR]]></Declaration>
   "Networks": [
     {
       "$type": "Network",
-      "Id": "-nIzDLP0",
+      "Id": "ak4Dq5TZ",
+      "Sequence": {
+        "$type": "Sequence"
+      }
+    },
+    {
+      "$type": "Network",
+      "Id": "QO1mzzsL",
       "Sequence": {
         "$type": "Sequence",
         "Elements": [
@@ -31,22 +38,27 @@ END_VAR]]></Declaration>
             "$type": "Contact",
             "Operand": {
               "$type": "Operand",
-              "Expression": "execute"
+              "Expression": "delay.Q",
+              "Modifier": {
+                "$type": "Modifier",
+                "Negation": true
+              }
             }
           },
           {
             "$type": "Block",
-            "BlockType": "TIMEMUL",
+            "BlockType": "TON",
             "Instance": {
-              "$type": "Operand"
+              "$type": "Operand",
+              "Expression": "delay"
             },
-            "CallType": 3,
+            "CallType": 2,
             "Inputs": [
               {
                 "$type": "Input",
                 "Pin": {
                   "$type": "Pin",
-                  "Name": "EN"
+                  "Name": "IN"
                 },
                 "Sequence": {
                   "$type": "Sequence"
@@ -56,26 +68,7 @@ END_VAR]]></Declaration>
                 "$type": "Input",
                 "Pin": {
                   "$type": "Pin",
-                  "Name": "TIME_IN"
-                },
-                "Sequence": {
-                  "$type": "Sequence",
-                  "Elements": [
-                    {
-                      "$type": "InVariable",
-                      "Operand": {
-                        "$type": "Operand",
-                        "Expression": "period"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "$type": "Input",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "VALUE"
+                  "Name": "PT"
                 },
                 "Sequence": {
                   "$type": "Sequence",
@@ -98,11 +91,7 @@ END_VAR]]></Declaration>
                           "$type": "Input",
                           "Pin": {
                             "$type": "Pin",
-                            "Name": "G",
-                            "Modifier": {
-                              "$type": "Modifier",
-                              "Negation": true
-                            }
+                            "Name": "G"
                           },
                           "Sequence": {
                             "$type": "Sequence"
@@ -113,25 +102,6 @@ END_VAR]]></Declaration>
                           "Pin": {
                             "$type": "Pin",
                             "Name": "IN0"
-                          },
-                          "Sequence": {
-                            "$type": "Sequence",
-                            "Elements": [
-                              {
-                                "$type": "InVariable",
-                                "Operand": {
-                                  "$type": "Operand",
-                                  "Expression": "duty"
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        {
-                          "$type": "Input",
-                          "Pin": {
-                            "$type": "Pin",
-                            "Name": "IN1"
                           },
                           "Sequence": {
                             "$type": "Sequence",
@@ -189,6 +159,25 @@ END_VAR]]></Declaration>
                               }
                             ]
                           }
+                        },
+                        {
+                          "$type": "Input",
+                          "Pin": {
+                            "$type": "Pin",
+                            "Name": "IN1"
+                          },
+                          "Sequence": {
+                            "$type": "Sequence",
+                            "Elements": [
+                              {
+                                "$type": "InVariable",
+                                "Operand": {
+                                  "$type": "Operand",
+                                  "Expression": "duty"
+                                }
+                              }
+                            ]
+                          }
                         }
                       ],
                       "Outputs": [
@@ -196,6 +185,54 @@ END_VAR]]></Declaration>
                           "$type": "Output",
                           "Pin": {
                             "$type": "Pin"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "$type": "Block",
+                      "BlockType": "TIMEMUL",
+                      "Instance": {
+                        "$type": "Operand"
+                      },
+                      "CallType": 3,
+                      "Inputs": [
+                        {
+                          "$type": "Input",
+                          "Pin": {
+                            "$type": "Pin",
+                            "Name": "TIME_IN"
+                          },
+                          "Sequence": {
+                            "$type": "Sequence",
+                            "Elements": [
+                              {
+                                "$type": "InVariable",
+                                "Operand": {
+                                  "$type": "Operand",
+                                  "Expression": "period"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "$type": "Input",
+                          "Pin": {
+                            "$type": "Pin",
+                            "Name": "VALUE"
+                          },
+                          "Sequence": {
+                            "$type": "Sequence"
+                          }
+                        }
+                      ],
+                      "Outputs": [
+                        {
+                          "$type": "Output",
+                          "Pin": {
+                            "$type": "Pin",
+                            "Name": "TIMEMUL"
                           }
                         }
                       ]
@@ -209,107 +246,7 @@ END_VAR]]></Declaration>
                 "$type": "Output",
                 "Pin": {
                   "$type": "Pin",
-                  "Name": "ENO"
-                }
-              },
-              {
-                "$type": "Output",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "TIMEMUL"
-                },
-                "OutVariable": {
-                  "$type": "OutVariable",
-                  "Operand": {
-                    "$type": "Operand",
-                    "Expression": "delay.PT"
-                  }
-                }
-              }
-            ],
-            "En": true,
-            "Eno": true
-          },
-          {
-            "$type": "Block",
-            "BlockType": "TON",
-            "Instance": {
-              "$type": "Operand",
-              "Expression": "delay"
-            },
-            "CallType": 2,
-            "Inputs": [
-              {
-                "$type": "Input",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "EN"
-                },
-                "Sequence": {
-                  "$type": "Sequence"
-                }
-              },
-              {
-                "$type": "Input",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "IN",
-                  "Modifier": {
-                    "$type": "Modifier",
-                    "Negation": true
-                  }
-                },
-                "Sequence": {
-                  "$type": "Sequence",
-                  "Elements": [
-                    {
-                      "$type": "InVariable",
-                      "Operand": {
-                        "$type": "Operand",
-                        "Expression": "delay.Q"
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "$type": "Input",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "PT"
-                },
-                "Sequence": {
-                  "$type": "Sequence",
-                  "Elements": [
-                    {
-                      "$type": "InVariable",
-                      "Operand": {
-                        "$type": "Operand"
-                      }
-                    }
-                  ]
-                }
-              }
-            ],
-            "Outputs": [
-              {
-                "$type": "Output",
-                "Pin": {
-                  "$type": "Pin",
-                  "Name": "ENO"
-                }
-              },
-              {
-                "$type": "Output",
-                "Pin": {
-                  "$type": "Pin",
                   "Name": "Q"
-                },
-                "OutVariable": {
-                  "$type": "OutVariable",
-                  "Operand": {
-                    "$type": "Operand"
-                  }
                 }
               },
               {
@@ -325,9 +262,7 @@ END_VAR]]></Declaration>
                   }
                 }
               }
-            ],
-            "En": true,
-            "Eno": true
+            ]
           }
         ]
       }
